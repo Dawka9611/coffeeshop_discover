@@ -9,12 +9,13 @@
   max-width: 72rem /* 1152px */;
   padding-left: 1rem /* 16px */;
   padding-right: 1rem /* 16px */;
+  position: relative;
 }
 
 .heroImage {
-  position: absolute;
-  top: 0px;
-  z-index: 1;
+  /* position: absolute; */
+  /* top: 0px;
+  z-index: 1; */
 }
 
 .cardLayout {
@@ -40,6 +41,16 @@
   margin-top: 5rem;
 }
 
+.heroImageContainer{
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 10%;
+}
+.heroImage{
+z-index: 10;
+}
 /** Breakpoints:
   sm: min-width: 640px;
   md: min-width: 768px;
