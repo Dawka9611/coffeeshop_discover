@@ -3,10 +3,11 @@ import Image from 'next/image'
 import Banner from '../components/banner'
 import Card from '../components/card'
 import styles from '../styles/Home.module.css'
+import coffeeStores from '../data/coffee-stores.json'
 
 export default function Home() {
   const HandleOnClick = () => {
-    console.log('hello :>> ');
+    // console.log('hello :>> ');
   }
 
   return (
@@ -24,11 +25,12 @@ export default function Home() {
             <Image src="/static/hero-image.png" height={450} width={800} alt='' />
           </div>
           <div className={styles.cardLayout}>
-            <Card name='Coffee shop' imgUrl='/static/hero-image.png' href='/coffee-store/darkhorse' className={styles.card}/>
-            <Card name='Coffee shop' imgUrl='/static/hero-image.png' href='/coffee-store/darkhorse' className={styles.card}/>
-            <Card name='Coffee shop' imgUrl='/static/hero-image.png' href='/coffee-store/darkhorse' className={styles.card}/>
-            <Card name='Coffee shop' imgUrl='/static/hero-image.png' href='/coffee-store/darkhorse' className={styles.card}/>
-
+            {
+              coffeeStores.map(el => {
+                // console.log('el :>> ', el);
+                return <Card name={el.name} imgUrl={el.imgUrl} href={`/coffee-store/${el.id}`} className={styles.card} key={el.id} />
+              })
+            }
           </div>
         </main>
       </div>
